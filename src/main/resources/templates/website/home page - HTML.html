@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--The Site's Title:-->
+    <title>GameStock - Home Page</title>
+    <!--Web Header Icon Link:-->
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/BCK5XL3/Gamer-Stock-logo-On-Web-Site-Top.png">
+    <!--font libraries:-->
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Varela+Round&display=swap" rel="stylesheet">
+    <!--CSS Links:-->
+    <!--for navigation bar:-->
+    <link rel="stylesheet" type="text/css" href="/website/NB - CSS.css">
+    <!--for current page-->
+    <link rel="stylesheet" type="text/css" href="/website/home page - CSS.css">
+    <!--JS Links:-->
+    <!--for animation librarys:-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+  </head>
+  <body> 
+    <div id="myNav" class="overlay">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="navlogo"><img src="https://i.ibb.co/30RJPV9/Logo-Makr-59-Gjhh.png" alt="GamerStock - logo"></a>
+        <div class="overlay-content">
+          <a class="active">Home</a>
+          <div class="dropdown" onclick="ddToggle()">
+            <a>My Chosen Games <span id="pointer">▼</span></a>
+            <div id="dd" class="dropdown-content">
+              <a href="page 2 - HTML.html">Slime Rancher</a>
+              <a href="page 3 - HTML.html">Enter The Gungeon</a>
+              <a href="page 4 - HTML.html">Terraria</a>
+            </div>
+          </div>
+          <a href="page 5 - HTML.html">Game Gallery</a>
+          <a href="page 6 - HTML.html">Cool Game Facts</a>
+          <a href="About page - HTML.html">About</a>
+        </div>
+    </div>
+    <div class="nav">
+        <span class="logo-contaner"><img src="https://i.ibb.co/30RJPV9/Logo-Makr-59-Gjhh.png" alt="GamerStock - logo"></span>
+        <span id="time"></span>
+        <span id="disNav" onclick="openNav()">&#9776;</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+      <div class="img-contener">
+        <img src="https://media.giphy.com/media/9KawrQzIwdAYg/giphy.gif" alt="running man">
+      </div>
+    </div>
+    <section>
+      <div class="hero">
+        <img src="https://i.ibb.co/DCRKfT2/image.png" alt="gamerbackground">
+        <h1 class="headline">THE PLACE FOR GAMES</h1>
+      </div>
+    </section>
+    <div class="row">
+      <div class="row-header">
+        <h1>Things To Do And Search In This Website</h1>
+      </div>
+      <div class="col one">
+        <h3>Increase Your Knowledge Of Games!</h3>
+        <p>Here, you'll get to know more video games (or at least I hope you do). what they are, how to play, and also how fun they are.</p>
+        <p>You won't only learn about the games, but you'll also get some fact about some of them, and learn why I chose each of them (included in the About page).</p>
+      </div>
+      <div class="col two">
+        <h3>Get To Learn About The Creator Of The Website!</h3>
+        <p>My <del>top tier in quality, amazing, and number one in everything</del> site was created by, surprise surprise, ME! Daniel Orel Moskal.</p>
+        <p>Another part of my site is a hole page talking about me, what I like, and why I made this website the way I made it.</p>
+      </div>
+      <div class="col three">
+        <h3>Judge Me And My Skills!</h3>
+        <p>You can look at every page, every image, and every last leter, and just judge me on what I've done right and what's wrong.</p>
+        <p>But remember! don't be too judgemental! it's cool if you'll judge like a teacher would judge an exam. ☺</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>this website is owend by Daniel Orel Moskal © (I'm kidding... it isn't realy copyrighted, I just always wanted to put this copyright sign on, like all the cool websites).</p>
+      <p><strong>contact me via mail:</strong> <ins>mokapoop24@gmail.com</ins>.</p>
+    </div>
+    <!--More JS:-->
+    <!--for navigation bar:-->
+    <script type="text/javascript" src="/website/NB - JS _ JQuery.js"></script>
+    <!--for this page:-->
+    <script src="/website/home page - JS.js"></script>
+  </body>
+</html>

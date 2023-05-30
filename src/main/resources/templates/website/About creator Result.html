@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create my "About Me"</title>
+    <link rel="stylesheet" type="text/css" href="/website/About creator - CSS.css">
+</head>
+<body>
+    <body onload="getResult();">
+        <h1>Create An "About Me" Paragraf</h1>
+        <div class="after_click">
+            <span class="read">
+                <p>
+                    My name is <span id="name"></span>.
+                    <br>
+                    I'm a <span id="gender"></span>.
+                    <br>
+                    I learn in <span id="school"></span>,
+                    and I like to <span id="habits"></span>.
+                </p>
+            </span>
+            <button class="talk">please read my paragraf for me</button>
+        </div>
+        <div>
+            <p>to make another one, <a href="About creator.html"><strong>press here!</strong></a></p>
+        </div>
+        <script>
+            function getResult(){
+                //Get the parms from the url and set them in the document
+                parms = new URLSearchParams(location.search);
+                var question1 = parms.get("question1");
+                var question2 = parms.get("question2");
+                var question3 = parms.get("question3");
+                var question4 = parms.get("question4");
+                document.getElementById("name").textContent = question1;
+                if(question2 == "male"){
+                    document.getElementById("gender").textContent = "boy";
+                }
+                else{
+                    document.getElementById("gender").textContent = "girl";
+                }
+                document.getElementById("school").textContent = question3;
+                document.getElementById("habits").textContent = question4;
+
+
+                const btn = document.querySelector('.talk');
+                const text = document.querySelector('.read').textContent;
+    
+                btn.addEventListener('click', () =>{
+                    readOutLoud(text)
+                });
+                //An text reading program:
+                function readOutLoud(massage){
+                   const speech = new SpeechSynthesisUtterance();
+                   speech.text = massage;
+                   speech.volume = 1;
+                   speech.rate = 1;
+                   speech.pitch = 1; 
+                   window.speechSynthesis.speak(speech);
+                }
+            }
+        </script>
+    </body>
+</body>
+</html>

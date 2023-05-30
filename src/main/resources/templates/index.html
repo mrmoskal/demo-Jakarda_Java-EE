@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Demo</title>
+
+    <!-- style element -> for css -->
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            float: left;
+            /*overflow-y: scroll;*/
+        }
+        *:focus{
+            outline: none;
+        }
+        body, html{
+            height: 100%;
+            width: 100%;
+            background-color: grey;
+            overflow-x: hidden;
+        }
+        :root{
+            /* for variable declarations: */
+            /* main elements -> */
+            --header-hieght: 7.5vh;
+            --main-hieght: 100vh;
+            --footer-hieght: 7.5vh;
+
+            --anim-ball-redius: 5em;
+
+            /* animation btn -> */
+            --btn-color-inactive: #3f3f3f;
+            --btn-color-hover: #282828;
+            --btn-color-active: black;
+
+            --btn-background-inactive: hsl(195 53% 79% / 0.45);
+            --btn-background-hover: hsl(195 53% 79% / 0.85);
+            --btn-background-active: hsl(195 53% 79% / 1);
+
+            --anim-ball-background: black;
+            --anim-ball-border-background: grey;
+            --anim-ball-container-background: white;
+
+            --transition-time: 500ms;
+            --ball-animation-time: 5s;
+        }
+
+        /* make scroll-bar disappear */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        ::-webkit-scrollbar-track {
+            display: none;
+        }
+        ::-webkit-scrollbar-thumb {
+            display: none;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            display: none;
+        }
+
+        /*:not(html, body, div, h1, p){*/
+        /*    border: 2px solid darkgrey;*/
+        /*}*/
+
+        /*nav{*/
+        /*    position: sticky;*/
+        /*    top: 0;*/
+        /*    left: 0;*/
+        /*    z-index: 10;*/
+        /*    background: lightgray;*/
+        /*    color: black;*/
+        /*    width: 5vw;*/
+        /*    height: var(--header-height);*/
+        /*    transform: translate(0, var(--header-height));*/
+        /*}*/
+
+        .content-wrapper{
+            display: grid;
+            align-items: center;
+            color: white;
+            font-size: 1.5vw;
+            text-shadow: 0.125vw 0.125vh 0 black;
+            font-family: sans-serif;
+        }
+
+        header{
+            width: 100%;
+            height: var(--header-hieght);
+            background-color: lightblue;
+            padding-inline: 0.5vw;
+            padding-block: 0.5vh;
+        }
+        main{
+            width: 100%;
+            height: 100vh;
+            background-color: lightcoral;
+            padding: 0 2em 2em 2em;
+
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+        footer{
+            width: 100%;
+            height: var(--footer-hieght);
+            background-color: lightgreen;
+            padding-inline: 0.5vw;
+            padding-block: 0.5vh;
+        }
+
+        .main-content{
+            width: 75vw;
+            height: 40vh;
+
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            grid-template-areas:
+                'main-header'
+                'btn-animation'
+            ;
+        }
+        .main-content > h1{
+            font-size: 10vw;
+            text-shadow: 0.3vw 0.4vh 0 black;
+        }
+
+        .main-header{
+            grid-area: main-header;
+            transition: transform var(--transition-time) ease-in-out;
+        }
+        .btn-animation{
+            grid-area: btn-animation;
+
+            width: 70%;
+            height: 100%;
+            padding: 1.5vh 1.5vw;
+            font-size: 5vh;
+
+            background-color: var(--btn-background-inactive);
+            color: var(--btn-color-inactive);
+            border: 0.5vh solid var(--btn-color-inactive);
+
+            transition: color var(--transition-time) ease-in-out,
+                background-color var(--transition-time) ease-in-out,
+                border var(--transition-time) ease-in-out;
+        }
+        .btn-animation:hover{
+            background-color: var(--btn-background-hover);
+            color: var(--btn-color-hover);
+            border: 0.5vh solid var(--btn-color-hover);
+        }
+        .btn-animation:active{
+            background-color: var(--btn-background-active);
+            color: var(--btn-color-active);
+            border: 0.5vh solid var(--btn-color-active);
+        }
+
+        .main-anim-content{
+            width: 60%;
+            height: 35vh;
+            position: relative;
+            border: 0.5em solid black;
+            border-radius: 100%;
+            background-color: var(--anim-ball-container-background);
+            overflow: hidden;
+        }
+        .anim-ball{
+            width: var(--anim-ball-redius);
+            height: var(--anim-ball-redius);
+            border-radius: 50%;
+            border: calc(var(--anim-ball-redius) / 5) solid var(--anim-ball-border-background);
+            background-color: var(--anim-ball-background);
+
+            /* animation start position */
+            position: absolute;
+            top: calc((100% - var(--anim-ball-redius)) / 2);
+            left: calc((100% - var(--anim-ball-redius)) / 2);
+        }
+        .anim-ball:before{
+            content: '';
+            display: block;
+            width: calc(var(--anim-ball-redius) / 4);
+            height: calc(var(--anim-ball-redius) / 4);
+            border-radius: 50%;
+            background-color: var(--anim-ball-container-background);
+            transform: translate(25%, 25%);
+            z-index: 1;
+        }
+
+        /*.anim-active{*/
+        /*    background-color: transparent;*/
+        /*    background-image: linear-gradient(45deg, #f3ec78, #af4261);*/
+        /*    background-size: 100%;*/
+        /*    background-repeat: repeat;*/
+        /*    background-clip: text;*/
+        /*    text-fill-color: transparent;*/
+        /*    -webkit-background-clip: text;*/
+        /*    -webkit-text-fill-color: transparent;*/
+        /*    animation: var(--ball-animation-time) infinite alternate ball-animation;*/
+        /*}*/
+        .anim-active {
+            /* Other styles... */
+            animation: var(--ball-animation-time) infinite alternate ball-animation;
+        }
+        .anim-active-container{
+            animation: calc(var(--ball-animation-time) / 2) alternate eyeball-close;
+        }
+        @keyframes ball-animation {
+            0%{
+                top: calc((100% - var(--anim-ball-redius)) / 2);
+                left: calc((100% - var(--anim-ball-redius)) / 2);
+            }
+            5%{
+                top: 0;
+                left: 0;
+            }
+            10%{
+                top: calc(100% - var(--anim-ball-redius));
+                left: 0;
+            }
+            20%{
+                top: calc(100% - var(--anim-ball-redius));
+                left: calc(100% - var(--anim-ball-redius));
+            }
+            30%{
+                top: 0;
+                left: calc(100% - var(--anim-ball-redius));
+            }
+            40%{
+                top: calc(100% - var(--anim-ball-redius));
+                left: 0;
+            }
+            50%{
+                top: 0;
+                left: 0;
+            }
+            60%{
+                top: calc(100% - var(--anim-ball-redius));
+                left: calc(100% - var(--anim-ball-redius));
+            }
+            70%{
+                top: calc(100% - var(--anim-ball-redius));
+                left: calc((100% - var(--anim-ball-redius)) / 2);
+            }
+            75%{
+                top: 0;
+                left: calc((100% - var(--anim-ball-redius)) / 2);
+            }
+            80%{
+                top: calc((100% - var(--anim-ball-redius)) / 2);
+                left: calc((100% - var(--anim-ball-redius)) / 2);
+            }
+            85%{
+                top: calc((100% - var(--anim-ball-redius)) / 2);
+                left: calc(100% - var(--anim-ball-redius));
+            }
+            90%{
+                top: calc((100% - var(--anim-ball-redius)) / 2);
+                left: 0;
+            }
+            95%{
+                top: calc((100% - var(--anim-ball-redius)) / 2);
+                left: calc((100% - var(--anim-ball-redius)) / 2);
+            }
+            100%{
+                top: calc((100% - var(--anim-ball-redius)) / 2);
+                left: calc((100% - var(--anim-ball-redius)) / 2);
+            }
+            200%{
+                top: calc((100% - var(--anim-ball-redius)) / 2);
+                left: calc((100% - var(--anim-ball-redius)) / 2);
+            }
+        }
+        @keyframes eyeball-close {
+            from{
+                height: 35vh;
+            }
+            50%{
+                height: 0;
+            }
+            to{
+                height: 35vh;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--    <nav>-->
+<!--        <div class="nav-content"></div>-->
+<!--    </nav>-->
+
+    <header class="content-wrapper">
+        <div class="header-content">
+            <p>testing web connection. please do not interrupt!</p>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="main-content">
+            <h1 class="main-header">Hello World</h1>
+            <button type="button" class="btn-animation"></button>
+        </div>
+        <div class="main-anim-content">
+            <div class="anim-ball"></div>
+        </div>
+    </main>
+
+    <footer class="content-wrapper">
+        <div class="footer-content">
+            <p>test location: localhost:8080. status: doing well (for now).</p>
+        </div>
+    </footer>
+
+
+    <!-- script element -> for javascript -->
+    <script>
+        // vars:
+        const btn_animation = document.querySelector(".btn-animation"),
+            ball_animation = document.querySelector(".anim-ball"),
+            ball_container_animation = document.querySelector(".main-anim-content"),
+            text_state_arr = ["Press To Activate Animation", "Press To Deactivate Animation"],
+            header_main = document.querySelector(".main-header");
+
+        let currTextOffset = 0,
+            currInterval;
+
+        // functions:
+        function getStringOfCharInSpan(char){
+            return "<span class='anim-char'>" + char + "</span>";
+        }
+
+        let ballActive = null, containerActive = null;
+        const animationInterval = () => {
+            if (ballActive === null){
+                ballActive = setInterval(() => {
+                    ball_animation.classList.toggle("anim-active");
+                }, 5000);
+            }
+
+            if (containerActive === null){
+                containerActive = setInterval(() => {
+                    ball_container_animation.classList.toggle("anim-active-container");
+                }, 10000);
+            }
+        }
+
+        // set animation btn text
+        btn_animation.textContent = text_state_arr[currTextOffset];
+
+        // set header text
+        header_main.innerHTML = getStringOfCharInSpan('H') +
+            getStringOfCharInSpan('e') +
+            getStringOfCharInSpan('l') +
+            getStringOfCharInSpan('l') +
+            getStringOfCharInSpan('o') +
+            getStringOfCharInSpan(' ') +
+            getStringOfCharInSpan('W') +
+            getStringOfCharInSpan('o') +
+            getStringOfCharInSpan('r') +
+            getStringOfCharInSpan('l') +
+            getStringOfCharInSpan('d');
+
+        // set on click event:
+        btn_animation.addEventListener("click", () =>{
+            // change text displayed on btn according to current state ->
+            currTextOffset++;
+            currTextOffset %= text_state_arr.length;
+            btn_animation.textContent = text_state_arr[currTextOffset];
+
+            // ball_animation.classList.toggle("anim-active");
+            // ball_container_animation.classList.toggle("anim-active-container");
+            if (currTextOffset === 1)
+                currInterval = setInterval(animationInterval, 100);
+            else {
+                clearInterval(currInterval);
+
+                clearInterval(containerActive);
+                clearInterval(ballActive);
+
+                ballActive = null;
+                containerActive = null;
+
+                ball_animation.classList.remove("anim-active");
+                ball_container_animation.classList.remove("anim-active-container");
+            }
+        });
+    </script>
+</body>
+</html>

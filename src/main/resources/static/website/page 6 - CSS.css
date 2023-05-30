@@ -1,0 +1,19 @@
+body{
+    font-size: 18pt;
+    text-shadow: 2px 2px 0px black;
+    color: white;
+    background: radial-gradient(lightgrey, darkgrey) fixed;
+    background-size: 100%;
+}
+.row{
+    padding: 15px;
+}
+h1, h2{
+    text-decoration: underline;
+}
+h1{
+    text-align: center;
+}
+li{
+    margin-top: 25px;
+}

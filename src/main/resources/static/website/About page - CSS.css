@@ -1,0 +1,93 @@
+body{
+    background: linear-gradient(to top left, lightgreen, darkgreen) fixed;
+    background-size: 100%;
+}
+.row{
+    width: 100%;
+    position: relative;
+}
+.row .text{
+    display: block;
+    margin: auto;
+    font-size: 16pt;
+    color: black;
+    text-align: center;
+    width: 500px;
+    float: initial;
+}
+.row img{
+    position: fixed;
+    width: 200px;
+    height: 200px;
+}
+
+.row img:hover{
+    filter: drop-shadow( 0 0 10px white);
+}
+
+.It1{
+    top: 100px;
+    left: 100px;
+}
+
+.It2{
+    top: 100px;
+    right: 100px;
+}
+
+.Ib1{
+    bottom: 100px;
+    left: 100px;
+}
+
+.Ib2{
+    bottom: 100px;
+    right: 100px;
+}
+
+.It1, .Ib2{
+    transform: rotateZ(45deg);
+    animation: leri 1s infinite;
+}
+
+.It2, .Ib1{
+    transform: rotateZ(-45deg);
+    animation: rile 1s infinite;
+}
+
+@keyframes rile{
+    0%{
+        transform: rotateZ(-45deg);
+    }
+    1%{
+        transform: rotateZ(45deg);
+    }
+    50%{
+        transform: rotateZ(45deg);
+    }
+    51%{
+        transform: rotateZ(-45deg);
+    }
+    100%{
+        transform: rotateZ(-45deg);
+    }
+}
+
+
+@keyframes leri{
+    0%{
+        transform: rotateZ(45deg);
+    }
+    1%{
+        transform: rotateZ(-45deg);
+    }
+    50%{
+        transform: rotateZ(-45deg);
+    }
+    51%{
+        transform: rotateZ(45deg);
+    }
+    100%{
+        transform: rotateZ(45deg);
+    }
+}

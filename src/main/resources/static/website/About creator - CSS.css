@@ -1,0 +1,78 @@
+*:not(span){
+    margin: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgreen;
+}
+h1{
+    font-size: 40pt;
+    text-decoration: underline black;
+    color: black;
+    text-shadow: 0px 0px 5px grey;
+    text-align: center;
+    margin-top: 0;
+}
+div{
+    width: 100%;
+    text-align: center;
+}
+.after_click{
+    border-radius: 25px;
+    padding: 10px;
+    display: block;
+    margin: auto;
+    box-shadow: 0px 0px 3px black inset;
+    background-color: white;
+    width: 300px;
+}
+.after_click p, .after_click span{
+    font-size: 18pt;
+}
+.talk{
+    background-color: green;
+    border-radius: 25px;
+    border: 2px solid lime;
+    outline: none;
+}
+.talk:hover, .talk:focus{
+    border-color: limegreen;
+}
+#quiz{
+    border-radius: 25px;
+    box-shadow: 0px 0px 3px black inset;
+    width: 300px;
+    background-color: white;
+    display: block;
+    margin: auto;
+}
+#quiz p{
+    text-decoration: underline black;
+}
+.finish{
+    background-color: green;
+    border-radius: 25px;
+    border: 2px solid lime;
+    outline: none;
+}
+.finish:hover, .finish:focus{
+    border-color: limegreen;
+}
+strong:not(#full){
+    text-decoration: underline blue;
+    color: blue;
+    margin: 0;
+    padding: 0;
+}
+strong:hover:not(#full), strong:focus:not(#full){
+    text-decoration: underline darkblue;
+    color: darkblue;
+}
+::selection{
+    background: black;
+    color: white;
+}
+body::-webkit-scrollbar, html::-webkit-scrollbar{
+    display: none;
+}

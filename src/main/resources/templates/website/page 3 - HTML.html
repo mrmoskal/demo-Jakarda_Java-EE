@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--The Site's Title:-->
+    <title>GameStock - My Chosen Games</title>
+    <!--Web Header Icon Link:-->
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/BCK5XL3/Gamer-Stock-logo-On-Web-Site-Top.png">
+    <!--font libraries:-->
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Varela+Round&display=swap" rel="stylesheet">
+    <!--CSS Links:-->
+    <!--for navigation bar:-->
+    <link rel="stylesheet" type="text/css" href="/website/NB - CSS.css">
+    <!--for current page's header:-->
+    <link rel="stylesheet" type="text/css" href="/website/page 2 to 4 - CSS for header and else that is the same.css">
+    <!--for current page:-->
+    <style>
+      body{
+        background-color: rgb(187, 152, 106);
+      }
+      .headline{
+        color: hsl(34, 67%, 74%); 
+      }
+    </style>
+    <!--JS Links:-->
+    <!--for animation librarys:-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+  </head>
+  <body> 
+    <div id="myNav" class="overlay">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="navlogo"><img src="https://i.ibb.co/30RJPV9/Logo-Makr-59-Gjhh.png" alt="GamerStock - logo"></a>
+        <div class="overlay-content">
+          <a href="home page - HTML.html">Home</a>
+          <div class="dropdown" onclick="ddToggle()">
+            <a>My Chosen Games <span id="pointer">▼</span></a>
+            <div id="dd" class="dropdown-content">
+              <a href="page 2 - HTML.html">Slime Rancher</a>
+              <a class="active">Enter The Gungeon</a>
+              <a href="page 4 - HTML.html">Terraria</a>
+            </div>
+          </div>
+          <a href="page 5 - HTML.html">Game Gallery</a>
+          <a href="page 6 - HTML.html">Cool Game Facts</a>
+          <a href="About page - HTML.html">About</a>
+        </div>
+    </div>
+    <div class="nav">
+        <span class="logo-contaner"><img src="https://i.ibb.co/30RJPV9/Logo-Makr-59-Gjhh.png" alt="GamerStock - logo"></span>
+        <span id="time"></span>
+        <span id="disNav" onclick="openNav()">&#9776;</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+      <div class="img-contener">
+        <img src="https://i.ya-webdesign.com/images/cycling-clipart-animation-5.gif" alt="running man">
+      </div>
+    </div>
+    <section>
+      <div class="hero">
+        <div class="heroProfile"><img src="https://pbs.twimg.com/profile_images/633362976636993536/VKCTtNnc_400x400.png" alt="the bullet kin enemy"></div>
+        <img src="https://www.nintendo.com/content/dam/noa/en_US/games/switch/e/enter-the-gungeon-switch/enter-the-gungeon-switch-hero.jpg" alt="Slime Rancher Header">
+        <span class="headline"><strong>Enter The Gungeon</strong></span>
+      </div>
+    </section>
+    <div class="row">
+      <table>
+        <tr><th>subject</th><th>info on the subject</th></tr>
+        <tr><td>When does the game ends?</td><td>it doesn's. it has stages, and you need to get to the last stage (in this game, rather the character's past or the "bullet hell") to complite the run you started.</td></tr>
+        <tr><td>What's the game's art style like?</td><td>it's like a clasic arcade from the 80s style. (also, is in 2D)</td></tr>
+        <tr><td>How do I recommend to play this game?</td><td>try not to rage-quit every five seconds, but always react quickly and pay atantion to everything around you.</td></tr>
+        <tr><td>How mutch would i give it out of 5?</td><td>I would give it more than 5 if I could.</td></tr>
+      </table>
+    </div>
+    <section class="minyGallery">
+      <div class="galleryHero">
+        <img id="currImg" src="">
+        <button class="left" onclick="ToggleRight();"><div>►</div></button>
+        <button class="right" onclick="ToggleLeft();"><div>◄</div></button>
+        <div class="imgIndex"><span id="index"></span> / 6</div>
+      </div>  
+    </section>
+    <div class="footer">
+      <p>this website is owend by Daniel Orel Moskal © (I'm kidding... it isn't realy copyrighted, I just always wanted to put this copyright sign on, like all the cool websites).</p>
+      <p><strong>contact me via mail:</strong> <ins>mokapoop24@gmail.com</ins>.</p>
+    </div>
+    <!--More JS:-->
+    <!--for navigation bar:-->
+    <script type="text/javascript" src="/website/NB - JS _ JQuery.js"></script>
+    <!--for this page's header:-->
+    <script type="text/javascript" src="/website/page 2 to 4 - JS.js"></script>
+    <!--for this page:-->
+    <script type="text/javascript" src="/website/page 3 - JS.js"></script>
+  </body>
+</html>

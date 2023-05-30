@@ -1,0 +1,130 @@
+/*header:*/
+section{
+    display: flex;
+    width: 100%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.hero img{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.heroProfile{
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 20vh;
+    height: 20vh;
+    transform: translate(0%, 50%);
+    border-radius: 100%;
+    z-index: 2;
+}
+.heroProfile img{
+    object-fit: cover;
+}
+.headline{
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 40pt;
+    width: 100%;
+    transform: translate(5%, 100%);
+}
+/*row:*/
+.row{
+    width: 100%;
+    padding-top: 125px;
+    margin-bottom: 30px;
+}
+.row table{
+    border-collapse: collapse;
+    width: 100%;
+    background-color: gray;
+    border: 5px inset silver;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+    font-size: 18pt;
+}
+.row table th{
+    border-collapse: collapse;
+    border: 5px inset silver;
+    background-color: gray;
+    text-decoration: underline white;
+    font-size: 30pt;
+    padding: 40px;
+}
+.row table td{
+    border-collapse: collapse;
+    border: 5px inset silver;
+    background-color: gray;
+    padding: 30px;
+}
+/*miny gallery*/
+.minyGallery{
+    width: 100%;
+    height: 400px;
+}
+.galleryHero{
+    position: relative;
+    width: 600px;
+    height: 100%;
+    display: block;
+    margin: auto;
+    transition: 1.2s;
+}
+.galleryHero .left, .galleryHero .right{
+    background-color: white;
+    opacity: 0.7;
+    width: 32px;
+    height: 32px;
+    font-size: medium;
+    color: black;
+    z-index: 1;
+    outline: none;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 0px lightgrey;
+    cursor: pointer;
+}
+.galleryHero .left{
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.galleryHero .right{
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+.galleryHero img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 600px;
+    height: 400px;
+    z-index: 0;
+}
+.galleryHero .imgIndex{
+    color: black;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-size: 16pt;
+    color: white;
+    text-shadow: 1px 1px 0px black;
+}
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--The Site's Title:-->
+    <title>GameStock - About Page</title>
+    <!--Web Header Icon Link:-->
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/BCK5XL3/Gamer-Stock-logo-On-Web-Site-Top.png">
+    <!--font libraries:-->
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Varela+Round&display=swap" rel="stylesheet">
+    <!--CSS Links:-->
+    <!--for navigation bar:-->
+    <link rel="stylesheet" type="text/css" href="/website/NB - CSS.css">
+    <!--for current page-->
+    <link rel="stylesheet" type="text/css" href="/website/About page - CSS.css">
+    <!--JS Links:-->
+    <!--for animation librarys:-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+  </head>
+  <body> 
+    <div id="myNav" class="overlay">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="navlogo"><img src="https://i.ibb.co/30RJPV9/Logo-Makr-59-Gjhh.png" alt="GamerStock - logo"></a>
+        <div class="overlay-content">
+          <a href="home page - HTML.html">Home</a>
+          <div class="dropdown" onclick="ddToggle()">
+            <a>My Chosen Games <span id="pointer">▼</span></a>
+            <div id="dd" class="dropdown-content">
+              <a href="page 2 - HTML.html">Slime Rancher</a>
+              <a href="page 3 - HTML.html">Enter The Gungeon</a>
+              <a href="page 4 - HTML.html">Terraria</a>
+            </div>
+          </div>
+          <a href="page 5 - HTML.html">Game Gallery</a>
+          <a href="page 6 - HTML.html">Cool Game Facts</a>
+          <a class="active">About</a>
+        </div>
+    </div>
+    <div class="nav">
+        <span class="logo-contaner"><img src="https://i.ibb.co/30RJPV9/Logo-Makr-59-Gjhh.png" alt="GamerStock - logo"></span>
+        <span id="time"></span>
+        <span id="disNav" onclick="openNav()">&#9776;</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+      <div class="img-contener">
+        <img src="https://media.giphy.com/media/lNFHS0m9Ul1FluEX1z/giphy.gif" alt="running man">
+      </div>
+    </div>
+    <div class="row">
+      <div class="text">
+        <h1>About The Creator</h1>
+        <p>
+            so... here is a story about a young HTML coder, who made a cool website for a class project. and then, after a lot of work on cool stuff, and also kipping it up with all of his other class's projects,
+            he realized that he needs to write a short story about why he creaeted the website, in about <strong>less then a hour!</strong>
+        </p>
+        <p>
+            and so he started his short story with a short story inside it, to fill up some space.
+        </p>
+        <br>
+        <p>
+            if you didn't get it already (I actualy think you did, but it's a good way to start the story about me), I'm the young HTML coder from this very story.
+            and it's a story I just write out of the same situation I'm in.
+        </p>
+        <p>
+            my name is Daniel Orel Moskal. I'm almost 16 year old. I live in Tel-Aviv in Israel. I like codding, and playing computer games, and also to create cool websites in the meantime.
+        </p>
+        <p>
+            I learn in the (very good) Yeshiva Tihonit of art and seince, Bar-Yalan (in Tel-Aviv). my codding teacher is Mr.('the cool teacher [and I'm not kidding]') Roni Valder, who taught me almost everything you saw here (and if not all, due to the fact that he taught me how to search whatever I please.),
+            and with many other teachers who teach me other stuff.
+        </p>
+        <br>
+        <p>
+          I chose to do this site about video games in general because they are very cool and I play alot of them, so I thought that I might do something usefull with all the knowlege I have of them.
+        </p>
+        <br>
+        <p>
+            I'm also now out of things to say about me but I still need to put more text in here, not because it's part of the work, but just to let you see that the images are scrolling down with you, which is very cool.
+        </p>
+        <p>
+            I realy hope you enjoyed going through my website! it was a lot of fun creating it, it took a lot of trial and error, but that is what it takes to succeed.
+        </p>
+        <p>if you want, <a href="About creator.html" target="_blank">here is how to create your own "About Me" paragraf</a>.</p>
+      </div>
+      <img class="It1" src="https://i.ibb.co/BB07kBf/image.png" title="a picture of me" alt="my face">
+      <img class="It2" src="https://i.ibb.co/BB07kBf/image.png" title="a picture of me" alt="my face">
+      <img class="Ib1" src="https://i.ibb.co/BB07kBf/image.png" title="a picture of me" alt="my face">
+      <img class="Ib2" src="https://i.ibb.co/BB07kBf/image.png" title="a picture of me" alt="my face">
+    </div>
+    <div class="footer">
+      <p>this website is owend by Daniel Orel Moskal © (I'm kidding... it isn't realy copyrighted, I just always wanted to put this copyright sign on, like all the cool websites).</p>
+      <p><strong>contact me via the mail:</strong> <ins>mokapoop24@gmail.com</ins>.</p>
+    </div>
+    <!--More JS:-->
+    <!--for navigation bar:-->
+    <script type="text/javascript" src="/website/NB - JS _ JQuery.js"></script>
+    <!--for this Page:-->
+    <script type="text/javascript" src="/website/About page - JS.js"></script>
+  </body>
+</html>
